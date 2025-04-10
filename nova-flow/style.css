@@ -1,0 +1,243 @@
+* {
+    margin: 0px; /* Remove margem padrão dos elementos */
+    padding: 0px; /* Remove padding padrão dos elementos */
+    box-sizing: border-box; /* Inclui borda e padding no cálculo do tamanho dos elementos */
+}
+
+:root {
+    --primary-100: #0d1b2a; /* Cor primária escura */
+    --primary-200: #1b263b; /* Cor primária intermediária */
+    --primary-300: #415a77; /* Cor primária clara */
+    --accent-100: #4cc9f0; /* Cor de destaque mais clara */
+    --accent-200: #4895ef; /* Cor de destaque mais escura */
+    --text-primary: #e0e1dd; /* Cor principal do texto */
+    --text-secondary: #778da9; /* Cor secundária do texto */
+    --glass-bg: rgba(255, 255, 255, 0.08); /* Fundo semitransparente para efeito de vidro */
+    --gradient: linear-gradient(135deg, var(--accent-200), var(--accent-100)); /* Gradiente para estilo */
+}
+
+body {
+    background-color: var(--primary-100); /* Define a cor de fundo */
+    color: var(--text-primary); /* Define a cor do texto */
+    min-height: 100vh; /* Garante que o corpo tenha altura mínima da janela */
+    line-height: 1.6; /* Define a altura das linhas do texto */
+}
+
+.header {
+    padding: 1.5rem 8%; /* Define espaço interno no cabeçalho */
+    display: flex; /* Organiza o conteúdo em linha */
+    justify-content: space-between; /* Espaço uniforme entre elementos */
+    align-items: center; /* Alinha elementos ao centro verticalmente */
+    background: var(--primary-200); /* Define cor de fundo */
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2); /* Adiciona sombra ao cabeçalho */
+}
+
+.logo {
+    font-size: 1.8em; /* Define tamanho do texto da logo */
+    font-weight: 700; /* Define peso da fonte */
+    background: var(--gradient); /* Adiciona gradiente à logo */
+    -webkit-background-clip: text; /* Recorta o fundo do texto */
+    -webkit-text-fill-color: transparent; /* Torna o preenchimento do texto transparente */
+    display: flex; /* Organiza o conteúdo em linha */
+    align-items: center; /* Alinha elementos ao centro verticalmente */
+    gap: 0.8em; /* Define o espaço entre os elementos */
+}
+
+.logo::before {
+    content: ''; /* Adiciona conteúdo vazio antes da logo */
+    display: block; /* Torna o elemento visível */
+    width: 32px; /* Largura do ícone */
+    height: 32px; /* Altura do ícone */
+    background: var(--gradient); /* Gradiente aplicado ao ícone */
+    border-radius: 6px; /* Bordas arredondadas */
+}
+
+.nav-links {
+    display: flex; /* Organiza links em linha */
+    gap: 2em; /* Espaçamento entre os links */
+}
+
+.nav-links a {
+    color: var(--text-secondary); /* Cor inicial do link */
+    text-decoration: none; /* Remove sublinhado do link */
+    font-weight: 500; /* Define peso da fonte */
+    transition: 0.3s; /* Define duração da transição */
+    padding: 0.5rem 1rem; /* Define espaço interno do link */
+    border-radius: 8px; /* Adiciona bordas arredondadas */
+}
+
+.nav-links a:hover {
+    color: var(--text-primary); /* Altera cor do texto ao passar o mouse */
+    background: var(--glass-bg); /* Adiciona fundo ao link */
+}
+
+.container {
+    display: grid; /* Define layout de grade */
+    grid-template-columns: 1fr 1fr; /* Divide em 2 colunas iguais */
+    min-height: calc(100vh - 80px); /* Altura mínima excluindo o cabeçalho */
+    padding: 4rem 8%; /* Espaçamento interno */
+    gap: 4rem; /* Espaçamento entre os elementos */
+    align-items: center; /* Alinha os itens ao centro verticalmente */
+}
+
+/* Define a seção principal com altura máxima limitada e posicionamento relativo */
+.hero-section {
+    position: relative;
+    max-height: 720px;
+}
+
+/* Define o conteúdo principal com posição relativa e alta prioridade sobre outros elementos */
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+/* Estiliza o cabeçalho principal com tamanho grande, espaçamento, cor e posicionamento relativo */
+.hero-heading {
+    font-size: 3.5rem; /* Define o tamanho da fonte para tornar o texto destacado */
+    line-height: 1.1;  /* Ajusta o espaçamento entre linhas */
+    margin-bottom: 2rem; /* Adiciona margem inferior para espaçamento */
+    color: var(--text-primary); /* Usa uma variável CSS para a cor do texto */
+    position: relative;
+}
+
+/* Aplica um gradiente ao texto dentro do cabeçalho */
+.hero-heading span {
+    background: var(--gradient); /* Define um gradiente como fundo do texto */
+    -webkit-background-clip: text; /* Permite que apenas o texto seja preenchido pelo fundo */
+    -webkit-text-fill-color: transparent; /* Torna o texto transparente fora do gradiente */
+}
+
+/* Define o estilo do texto descritivo abaixo do cabeçalho */
+.hero-text {
+    font-size: 1.1rem; /* Tamanho moderado para leitura confortável */
+    color: var(--text-secondary); /* Usa uma variável CSS para cor secundária */
+    margin-bottom: 3rem; /* Adiciona espaçamento inferior */
+    max-width: 520px; /* Limita a largura máxima para melhorar a legibilidade */
+}
+
+/* Organiza botões de chamada para ação usando Flexbox */
+.cta-container {
+    display: flex; /* Usa Flexbox para organizar os elementos */
+    gap: 1.5rem; /* Define o espaçamento entre os botões */
+}
+
+/* Estiliza os botões de chamada para ação */
+.cta-button {
+    padding: 1rem 2rem; /* Define o espaço interno dos botões */
+    background: var(--gradient); /* Aplica um gradiente como fundo */
+    border: none; /* Remove as bordas padrão */
+    border-radius: 12px; /* Adiciona bordas arredondadas */
+    color: var(--text-primary); /* Define a cor do texto */
+    font-weight: 600; /* Torna o texto mais forte */
+    cursor: pointer; /* Define o cursor como interativo */
+    transition: 0.3s; /* Adiciona uma transição suave para interatividade */
+    position: relative;
+    overflow: hidden; /* Garante que elementos adicionais fiquem dentro do botão */
+}
+
+/* Adiciona uma camada interativa ao botão */
+.cta-button::after {
+    content: ''; /* Adiciona um elemento vazio para efeitos visuais */
+    position: absolute;
+    inset: 0; /* Garante que cubra toda a área do botão */
+    background: rgba(255, 255, 255, 0.1); /* Define uma leve camada branca */
+    opacity: 0; /* Inicialmente invisível */
+    transition: 0.3s; /* Transição suave na visibilidade */
+}
+
+/* Aplica um efeito ao passar o mouse */
+.cta-button:hover::after {
+    opacity: 1; /* Torna a camada visível */
+}
+
+/* Define uma seção de autenticação com largura máxima e alinhamento */
+.auth-section {
+    position: relative;
+    max-width: 480px; /* Limita a largura para manter foco visual */
+    margin-left: auto; /* Alinha à direita */
+}
+
+/* Estiliza o cartão de autenticação */
+.signin-card {
+    background: var(--primary-200); /* Define a cor de fundo do cartão */
+    padding: 3rem; /* Adiciona espaçamento interno ao cartão */
+    border-radius: 24px; /* Bordas arredondadas grandes para visual moderno */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2); /* Adiciona sombra para profundidade */
+    border: 1px solid var(--primary-300); /* Define uma borda sutil */
+}
+
+/* Estiliza o título do cartão */
+.signin-card h2 {
+    margin-bottom: 2rem;
+    font-size: 2rem; /* Tamanho maior para destaque */
+    color: var(--text-primary);
+    text-align: center; /* Centraliza o texto */
+}
+
+/* Gerencia os grupos de formulários */
+.form-group {
+    margin-bottom: 1.5rem; /* Adiciona espaçamento entre os campos */
+    position: relative;
+}
+
+/* Estiliza os campos de entrada */
+.form-group input {
+    width: 100%; /* Preenche toda a largura do container */
+    padding: 1.2rem 1.2rem 1.2rem 3rem; /* Adiciona espaçamento interno, incluindo espaço para ícones */
+    background: var(--primary-100); /* Define cor de fundo leve */
+    border: 1px solid var(--primary-100); /* Bordas consistentes com o fundo */
+    border-radius: 12px; /* Adiciona bordas arredondadas */
+    color: var(--text-primary); /* Define a cor do texto */
+    font-size: 1rem; /* Tamanho de fonte padrão */
+    transition: 0.3s; /* Adiciona transição suave para foco */
+}
+
+/* Define estilo ao focar no campo de entrada */
+.form-group input:focus {
+    outline: none; /* Remove o contorno padrão */
+    border-color: var(--accent-200); /* Altera a cor da borda ao focar */
+    box-shadow: 0 0 0 3px rgba(72, 149, 239, 0.2); /* Adiciona um efeito de foco */
+}
+
+/* Posiciona ícones dentro do campo de entrada */
+.form-group i {
+    position: absolute;
+    left: 1rem; /* Posiciona à esquerda */
+    top: 50%; /* Centraliza verticalmente */
+    transform: translateY(-50%);
+    color: var(--text-secondary); /* Usa cor secundária */
+}
+
+/* Estiliza o botão de envio */
+.submit-btn {
+    width: 100%; /* Preenche toda a largura */
+    padding: 1.2rem; /* Adiciona espaçamento interno */
+    background: var(--gradient); /* Usa gradiente como fundo */
+    border: none; /* Remove bordas padrão */
+    border-radius: 12px; /* Bordas arredondadas */
+    color: var(--text-primary); /* Define a cor do texto */
+    font-weight: 600; /* Texto mais forte */
+    cursor: pointer;
+    transition: 0.3s; /* Transição suave para interatividade */
+}
+
+/* Adiciona efeitos ao passar o mouse no botão */
+.submit-btn:hover {
+    transform: translateY(-2px); /* Move ligeiramente para cima */
+    box-shadow: 0 4px 16px rgba(76, 201, 240, 0.3); /* Adiciona sombra para profundidade */
+}
+
+/* Define a seção de ações alternativas */
+.alternate-action {
+    text-align: center; /* Centraliza o texto */
+    margin-top: 2rem;
+    color: var(--text-secondary); /* Usa cor secundária */
+}
+
+/* Estiliza links dentro da seção de ações alternativas */
+.alternate-action a {
+    color: var(--accent-200); /* Usa cor de destaque */
+    text-decoration: none; /* Remove sublinhado */
+    font-weight: 500; /* Define peso médio na fonte */
+}
