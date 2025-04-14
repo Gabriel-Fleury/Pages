@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizzaria Italian</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Italiana&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <header>
+        <div class="logo">Pizzaria Italian</div>
+        <nav class="nav-links">
+            <a href="#menu">Menu</a>
+            <a href="#features">Features</a>
+            <a href="#testimonials">Avaliações </a>
+            <a href="#about">sobre</a>
+        </nav>
+        <button class="cta-btn">Novo Pedido</button>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Artisan Pizzas Crafted with Passion</h1>
+            <p>Experience authentic Italian flavorswith our wood-fired pizzas made freom locally-sourced ingredients</p>
+            <button class="cta-btn">Explore Menu</button>
+        </div>
+        <div  class="hero-image">
+            <img src="pexels-edwardeyer-1049626.jpg" height="600px" alt="Pizza" >
+        </div>
+    </section>
+
+    <section class="menu" id="menu">
+        <h2>Our Menu</h2>
+        <div class="menu-filters">
+            <button class="filter-btn active" data-fitler="all">All</button>
+            <button class="filter-btn" data-fitler="pizza">Pizzas</button>
+            <button class="filter-btn" data-fitler="massas">Massas</button>
+        </div>
+        <div class="menu-grid">
+                <div class="menu-card" data-category="pizza">
+                    <img src="pexels-brettjordan-842519.jpg" alt="." height="200px">
+                    <div class="menu-card-content">
+                        <h3>Calabresa Acebolada</h3>
+                        <p>Calabresa, molho de tomate, cebola e mussarela</p>
+                        <div class="price">$14.99</div>
+                    </div>
+                </div>
+            
+            <div class="menu-card" data-category="pizza">
+                <img src="pexels-edwardeyer-1049626.jpg" alt="pizza" height="200px">
+                <div class="menu-card-content">
+                    <h3>4 Queijos</h3>
+                    <p>Mussarela, Catupiry, gorgonzola e provolone</p>
+                    <div class="price">$14.99</div>
+                </div>
+            </div>
+            <div class="menu-card" data-category="pasta">
+                <img src="pexels-cree-payton-110225339-9617397.jpg" height="200px" alt="pizza">
+                <div class="menu-card-content">
+                    <h3>Macarrao</h3>
+                    <p>Massa, molho e carne</p>
+                    <div class="price">$14.99</div>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
