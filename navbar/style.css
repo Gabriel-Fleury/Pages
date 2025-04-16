@@ -1,0 +1,99 @@
+:root{
+    --primary: #c95d04;
+    --secondary: #cead66;
+    --text: #2d3436;
+    --bg: #a5b1c2;
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--bg);
+    font-family: 'Inter', sans-serif;
+    padding: 2rem;
+}
+
+.breadcrumb{
+    display: flex;
+    align-items: center;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+    padding: 0.5rem;
+}
+
+.breadcrumb-item{
+    position: relative;
+    padding: 0.75rem 1.5rem 0.75rem 2rem;
+    color: var(--text);
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background: white;
+}
+
+.breadcrumb-item::after{
+    content: '';
+    position: absolute;
+    right: -1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-top: 1.2rem solid transparent;
+    border-bottom: 1.2rem solid transparent;
+    border-left: 1rem solid white;
+    z-index: 1;
+    transition: border-left-color 0.4s ease;
+}
+
+.breadcrumb-item::before{
+    content: '';
+    position: absolute;
+    right: -1.1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-top: 1.2rem solid transparent;
+    border-bottom: 1.2rem solid transparent;
+    border-left: 1rem solid var(--primary);
+    z-index: 0;
+    transition: border-left-color 0.4s ease;
+}
+
+.breadcrumb-item:hover{
+    background: linear-gradient(45deg, var(--primary), var(--secondary));
+    color: white;
+}
+
+.breadcrumb-item:hover::after{
+    border-left-color: var(--primary);
+}
+
+.breadcrumb-item:hover::before{
+    border-left-color: var(--secondary);
+}
+
+.breadcrumb-item:last-child{
+    pointer-events: none;
+    background: linear-gradient(45deg, var(--primary), var(--secondary));
+    color: white;
+    border-radius: 0 8px 8px 0;
+}
+
+.breadcrumb-item:last-child::after,
+.breadcrumb-item:last-child::before{
+    display: none;
+}
+
+.breadcrumb-item:first-child{
+    border-radius: 8px 0 0 8px;
+}
