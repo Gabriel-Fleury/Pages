@@ -1,0 +1,114 @@
+/* ===== VARIÁVEIS DE CORES ===== */
+:root {
+    --primary: #29fcff;       /* Cor primária (azul claro/ciano) */
+    --secondary: #a5b1c2;     /* Cor secundária (cinza azulado) */
+    --accent: #ff6b6b;        /* Cor de destaque (vermelho claro) */
+    --sufarce: rgba(255, 255, 255, 0.95); /* Superfície com transparência */
+}
+
+/* ===== RESET BÁSICO ===== */
+* {
+    margin: 0;                /* Remove margens padrão */
+    padding: 0;               /* Remove paddings padrão */
+    box-sizing: border-box;   /* Faz padding e border serem incluídos no width/height */
+}
+
+/* ===== ESTILOS DO BODY ===== */
+body {
+    display: flex;
+    justify-content: center;   /* Centraliza horizontalmente */
+    align-items: center;      /* Centraliza verticalmente */
+    min-height: 100vh;        /* Altura mínima = 100% da viewport */
+    background-color: rgba(131, 164, 224, 0.678); /* Cor de fundo azul claro */
+    font-family: 'Sagoe UI', system-ui, sans-serif; /* Fonte padrão */
+}
+
+/* ===== CONTAINER DO MENU ===== */
+.nav-container {
+    background: var(--sufarce); /* Usa a cor de superfície */
+    padding: 1.25rem 2rem;    /* Espaçamento interno (20px top/bottom, 32px sides) */
+    border-radius: 1.5rem;     /* Bordas arredondadas (24px) */
+    backdrop-filter: blur(16px); /* Efeito de desfoque no fundo */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Borda sutil */
+    background-color: #1e272e; /* Cor de fundo escura (sobrescreve --sufarce) */
+}
+
+/* ===== LISTA DO MENU ===== */
+.nav-menu {
+    display: flex;             /* Layout flexível */
+    gap: 3rem;                /* Espaço entre itens (48px) */
+    list-style: none;         /* Remove marcadores de lista */
+}
+
+/* ===== ITENS DO MENU ===== */
+.nav-item {
+    position: relative;       /* Permite posicionamento absoluto dos filhos */
+    cursor: pointer;         /* Muda cursor para pointer ao passar o mouse */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Animação suave */
+}
+
+/* ===== LINKS DO MENU (Observação: há um erro de digitação - deveria ser .nav-link) */
+.nav-link {
+    display: flex;
+    flex-direction: column;   /* Empilha ícone e texto verticalmente */
+    align-items: center;      /* Centraliza horizontalmente */
+    text-decoration: none;    /* Remove sublinhado */
+    color: var(--secondary);  /* Cor do texto */
+    transition: color 0.3s ease; /* Transição suave de cor */
+}
+
+/* ===== ÍCONES DO MENU ===== */
+.nav-icon {
+    font-size: 2rem;          /* Tamanho do ícone (32px) */
+    margin-bottom: 0.5rem;    /* Espaço abaixo do ícone (8px) */
+    transition: transform 0.3s ease; /* Animação de transformação */
+}
+
+/* ===== TEXTO DO MENU ===== */
+.nav-text {
+    font-size: 0.85rem;       /* Tamanho do texto (13.6px) */
+    font-weight: 500;         /* Peso da fonte */
+    letter-spacing: 0.5px;    /* Espaçamento entre letras */
+    color: var(--primary);     /* Cor do texto */
+    transform: translateY(10px); /* Move texto 10px para baixo (inicialmente escondido) */
+    transition: all 0.3s ease; /* Transição suave */
+    opacity: 0;               /* Texto invisível inicialmente */
+}
+
+/* ===== EFEITOS HOVER ===== */
+
+/* Efeito no ícone ao passar o mouse */
+.nav-item:hover .nav-icon {
+    color: var(--primary);     /* Muda cor */
+    transform: translateY(-5px); /* Move ícone para cima */
+}
+
+/* Efeito no texto ao passar o mouse */
+.nav-item:hover .nav-text {
+    opacity: 1;               /* Torna texto visível */
+    transform: translateY(0);  /* Retorna texto à posição original */
+}
+
+/* Ícone ativo (classe .active) */
+.nav-item.active .nav-icon {
+    color: var(--accent);      /* Muda cor para destaque */
+}
+
+/* Barra inferior animada */
+.nav-item::before {
+    content: '';              /* Elemento pseudo necessário */
+    position: absolute;
+    bottom: -8px;             /* Posiciona abaixo do item */
+    left: 0;
+    width: 100%;
+    height: 2px;              /* Altura da linha */
+    background: var(--primary); /* Cor da linha */
+    transform: scaleX(0);     /* Inicialmente invisível (largura 0) */
+    transform-origin: center; /* Ponto de origem da animação */
+    transition: transform 0.3s ease; /* Animação suave */
+}
+
+/* Animação da barra inferior ao passar o mouse */
+.nav-item:hover::before {
+    transform: scaleX(1);     /* Expande a linha para 100% de largura */
+}
