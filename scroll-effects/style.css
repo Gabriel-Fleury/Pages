@@ -1,0 +1,86 @@
+:root{
+    --primary: #6a11cb;
+    --secondary: #2575fc;
+}/* Reset CSS básico - aplica a todos os elementos */
+* {
+    margin: 0px;       /* Remove todas as margens padrão */
+    padding: 0px;      /* Remove todos os paddings padrão */
+    box-sizing: border-box; /* Faz com que padding e border não aumentem o tamanho total do elemento */
+}
+
+/* Estilos gerais do corpo do documento */
+body {
+    font-family: 'Arial', sans-serif; /* Define a fonte padrão */
+    overflow-x: hidden; /* Esconde a barra de rolagem horizontal */
+}
+
+/* ============= BARRA DE NAVEGAÇÃO ============= */
+nav {
+    position: fixed;    /* Fixa a barra no topo da tela */
+    top: 0;             /* Alinha no topo da viewport */
+    left: 0;            /* Alinha à esquerda da viewport */
+    width: 100%;        /* Ocupa 100% da largura */
+    background: rgba(255, 255, 255, 0.9); /* Fundo branco com 90% de opacidade */
+    backdrop-filter: blur(10px); /* Efeito de desfoque no que está atrás */
+    display: flex;      /* Ativa o modelo flexbox */
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    gap: 2rem;          /* Espaçamento de 2rem entre os itens */
+    padding: 1rem;      /* Espaçamento interno de 1rem */
+    z-index: 100;       /* Garante que fique acima de outros elementos */
+}
+
+/* Estilos dos links da navegação */
+nav a {
+    text-decoration: none;      /* Remove sublinhado padrão */
+    color: var(--primary);      /* Cor do texto usando variável CSS */
+    font-weight: bold;          /* Texto em negrito */
+    padding: 0.5rem 1rem;       /* Espaçamento interno */
+    border-radius: 5px;         /* Bordas arredondadas */
+    transition: background 0.3s ease; /* Transição suave para mudanças de background */
+}
+
+/* Efeito hover nos links */
+nav a:hover {
+    background: rgba(106, 17, 203, 0.1); /* Fundo semi-transparente ao passar o mouse */
+}
+
+/* ============= SEÇÕES DA PÁGINA ============= */
+section {
+    font-size: 1.5rem;          /* Tamanho da fonte */
+    min-height: 100vh;          /* Altura mínima = 100% da viewport */
+    display: flex;              /* Ativa flexbox */
+    justify-content: center;    /* Centraliza horizontalmente */
+    align-items: center;        /* Centraliza verticalmente */
+    color: white;               /* Cor do texto */
+    opacity: 0;                 /* Inicia invisível para animação */
+    transform: translateY(20px); /* Posiciona 20px abaixo para animação */
+    transition: opacity 0.8s ease, transform 0.8s ease; /* Anima opacidade e movimento */
+}
+
+/* Estado "ativo" da seção (quando visível na tela) */
+section.active {
+    opacity: 1;             /* Torna totalmente visível */
+    transform: translateY(0); /* Move para posição original */
+}
+
+/* ============= ESTILOS ESPECÍFICOS POR SEÇÃO ============= */
+
+/* Seção Home - Gradiente roxo/azul */
+#home {
+    background: linear-gradient(45deg, var(--primary), var(--secondary));
+}
+
+/* Seção Sobre - Gradiente vermelho/laranja */
+#sobre {
+    background: linear-gradient(45deg, #ff6b6b, #ff9f43);
+}
+
+/* Seção Serviços - Gradiente azul claro/verde água */
+#servicos {
+    background: linear-gradient(45deg, #00f3ff, #00ff9d);
+}
+
+/* Seção Contato - Gradiente roxo/azul */
+#contato {
+    background: linear-gradient(45deg, #9b59b6, #3498db);
+}
