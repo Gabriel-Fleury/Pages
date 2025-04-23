@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Profissional</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">Flor Alis Beauty</div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#serviços">Serviços</a></li>
+                    <li><a href="#avaliações">Avaliações</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-content scroll-reveal">
+            <h1 class="hero-title">Transforme sua experiência de beleza</h1>
+            <p class="hero-text">Descubra tratamentos de beleza de luxo elaborados por especialistas em nosso estúdio de última geração</p>
+            <a href="#" class="btn">
+                <i class="fa-solid fa-calendar-days"></i>
+                Agendar consulta
+            </a>
+        </div>
+
+        <div class="hero-image scroll-reveal">
+            <img src="foto-perfil.png" alt="perfil">
+        </div>
+    </section>
+
+    <section class="services" id="serviços">
+        <div class="cotainer">
+            <h2 class="scroll-reveal">Outros serviços</h2>
+            <div class="services-grid">
+                <div class="service-card scroll-reveal">
+                    <div class="service-icon">
+                        <i class="fa-solid fa-spa"></i>
+                    </div>
+                    <h3>Spa de luxo</h3>
+                    <p>Tratamentos faciais e corporais premium com produtos orgânicos</p>
+                </div>
+                <div class="service-card scroll-reveal">
+                    <div class="service-icon">
+                        <i class="fa-solid fa-scissors"></i>
+                    </div>
+                    <h3>Estilo de cabelo</h3>
+                    <p>Serviços especializados de coloração, corte e modelagem</p>
+                </div>
+                <div class="service-card scroll-reveal">
+                    <div class="service-icon">
+                        <i class="fa-solid fa-paintbrush"></i> 
+                    </div>
+                    <h3>Arte em unhas</h3>
+                    <p>designs de unhas criativos com produtos premium</p>
+                </div>
+            </div>
+        </div>  
+    </section>
+
+    <section class="testimonials" id="avaliações">
+        <div class="container">
+            <h2 class="scroll-reveal">Histórias de clientes</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card scroll-reveal">
+                    <img src="foto1.jpg" alt="cliente" class="client-photo">
+                    <div class="rating">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p>"A melhor experiência de beleza que já tive! Resultados verdadeiramente transformadores."</p>
+                    <h4>Miguel Jason</h4>
+                </div>
+                <div class="testimonial-card scroll-reveal">
+                    <img src="foto2.jpg" class="client-photo" alt="Cliente">
+                    <div class="rating">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p>"Serviço excepcional e atenção aos detalhes. Recomendo muito!"</p>
+                    <h4>Hemma Davis</h4>
+                </div>
+                <div class="testimonial-card scroll-reveal">
+                    <img src="foto3.jpg" class="client-photo" alt="Cliente">
+                    <div class="rating">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half"></i>
+                    </div>
+                    <p>"Meu lugar preferido para tratamentos de luxo. Sempre excepcional!"</p>
+                    <h4>Otávio Wilson</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="booking" id="booking">
+        <div class="container">
+            <div class="booking-content scroll-reveal">
+                <h2>Reserve sua sessão</h2>
+                <p class="section-subtitle">Preencha o formulário abaixo para reservar sua experiência de beleza</p>
+
+                <form class="booking-form">
+                    <div class="form-grid">
+                        <div class="input-group">
+                            <input type="text" id="name" required>
+                            <label for="name">Nome completo</label>
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+
+                        <div class="input-group">
+                            <input type="email"  id="name" required>
+                            <label for="email">Email</label>
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+
+                        <div class="input-group">
+                            <input type="tel"  id="phone">
+                            <label for="phone">Número de telefone</label>
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+
+                        <div class="input-group">
+                            <select  id="service" required>
+                                <option value="">Selecione o serviço</option>
+                                <option>Corte de cabelo</option>
+                                <option>Tratamento Facial</option>
+                                <option>Massagem terapêutica</option>
+                                <option>Nail Desgin</option>
+                            </select>
+                            <i class="fa-solid fa-spa"></i>
+                        </div>
+
+                        <div class="input-group">
+                            <input type="date" id="date" required>
+                            <label for="date">Data preferida</label>
+                            <i class="fa-solid fa-calendar-days"></i>
+                        </div>
+
+                        <div class="input-group">
+                            <input type="time" id="time">
+                            <label for="time">Melhor hórario</label>
+                            <i class="fa-solid fa-clock"></i>
+                        </div>
+                    </div>
+                    <div class="input-group full-width">
+                        <textarea  id="message" rows="4" placeholder="Special rquests..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn">
+                        <i class="fa-solid fa-paper-plane"></i>
+                        Reserve agora
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer style="background: #2a2a2a; color: white; padding: 6rem 0 3rem; position: relative;" >
+        <div class="container">
+            <div class="footer-content scroll-reveal">
+                <div class="footer-col">
+                    <h3>Glamurosa</h3>
+                    <p>Onde a beleza encontra a perfeição. Experimente tratamentos de luxo com profissionais experientes em um ambiente tranquilo.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                        <a href="#"><i class="fa-brands fa-pinterest"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Demais links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#serviços">Serviços</a></li>
+                        <li><a href="#avaliações">Avaliações</a></li>
+                        <li><a href="#">Sobre</a></li>
+                        <li><a href="#Contato"></a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contato</h3>
+                    <p><i class="fa-solid fa-location-dot"></i> 123 Beauty Street, Glam City</p>
+                    <p><i class="fa-solid fa-phone"></i>(555) 9999-9999</p>
+                    <p><i class="fa-solid fa-envelope"></i>HELLO@GMAIL.COM</p>
+                    <p><i class="fa-solid fa-clock"></i>Seg a Sex: 8:00AM - 18:00PM</p>
+                </div>
+            </div>
+            <div class="copyright scroll-reveal">
+                <p>&copy;2023 Beauty. Tem os direitos reservados | Gabriel Design<i class="fa-solid fa-heart"> by Beauty Studios</i></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

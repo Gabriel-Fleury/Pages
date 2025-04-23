@@ -1,0 +1,575 @@
+:root{
+    --primary: #ff6b98;
+    --secondary: #6a5acd;
+    --dark: #2a2a2a;
+    --accent: #ffd700;
+    --light: #ffffff;
+}
+
+/* Reset básico e estilos globais */
+*{
+    margin: 0;          /* Remove margens padrão */
+    padding: 0;         /* Remove paddings padrão */
+    box-sizing: border-box; /* Faz com que padding e border não afetem as dimensões totais */
+    font-family: 'Popins', sans-serif; /* Define a fonte padrão */
+}
+
+/* Estilos do corpo da página */
+body{
+    background: var(--light); /* Cor de fundo usando variável CSS */
+    color: var(--dark);      /* Cor do texto usando variável CSS */
+    overflow-x: hidden;      /* Esconde a barra de rolagem horizontal */
+}
+
+/* Container principal para centralizar o conteúdo */
+.container{
+    max-width: 1400px;    /* Largura máxima do conteúdo */
+    margin: 0 auto;       /* Centraliza o container */
+    padding: 0 40px;      /* Padding nas laterais */
+}
+
+/* Estilos do cabeçalho moderno */
+header{
+    position: fixed;      /* Fixa o cabeçalho no topo */
+    width: 100%;          /* Largura total */
+    padding: 1.5rem 0;    /* Espaçamento vertical */
+    background: rgba(255, 255, 255, 0.95); /* Fundo branco com transparência */
+    backdrop-filter: blur(15px); /* Efeito de desfoque no que está atrás */
+    z-index: 1000;        /* Garante que fique acima de outros elementos */
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.05); /* Sombra sutil */
+}
+
+/* Barra de navegação */
+.navbar{
+    display: flex;                  /* Layout flexível */
+    justify-content: space-between; /* Espaço entre os itens */
+    align-items: center;            /* Centraliza verticalmente */
+}
+
+/* Estilo do logo */
+.logo{
+    font-size: 2rem;               /* Tamanho grande */
+    font-weight: 700;              /* Negrito */
+    background: linear-gradient(45deg, var(--primary), var(--secondary)); /* Gradiente */
+    -webkit-background-clip: text; /* Faz o gradiente aplicar apenas ao texto */
+    -webkit-text-fill-color: transparent; /* Torna o texto transparente para mostrar o gradiente */
+}
+
+/* Links de navegação */
+.nav-links{
+    display: flex;      /* Layout flexível */
+    gap: 2rem;         /* Espaço entre os itens */
+    list-style: none;  /* Remove marcadores de lista */
+}
+
+/* Estilos dos links */
+.nav-links a{
+    color: var(--dark);          /* Cor do texto */
+    text-decoration: none;       /* Remove sublinhado */
+    font-weight: 500;            /* Peso da fonte */
+    position: relative;          /* Para posicionar o pseudo-elemento */
+    transition: all 0.3s ease;   /* Transição suave para hover */
+}
+
+/* Efeito de sublinhado animado */
+.nav-links a::after{
+    content: '';                 /* Necessário para pseudo-elementos */
+    position: absolute;          /* Posicionamento absoluto em relação ao link */
+    width: 0;                    /* Começa com largura zero */
+    height: 2px;                 /* Altura do sublinhado */
+    background: var(--primary);  /* Cor do sublinhado */
+    bottom: -5px;                /* Posiciona abaixo do texto */
+    left: 0;                     /* Alinha à esquerda */
+    transition: width 0.3s ease; /* Anima a largura */
+}
+
+/* Efeito hover - sublinhado completo */
+.nav-links a:hover::after{
+    width: 100%; /* Expande a largura para 100% */
+}
+
+/* Seção Hero (principal) */
+.hero{
+    padding: 1px 0 0 30px;       /* Padding personalizado */
+    display: grid;               /* Layout em grid */
+    grid-template-columns: 1fr 1fr; /* Duas colunas de tamanho igual */
+    gap: 4rem;                   /* Espaço entre colunas */
+    align-items: center;         /* Centraliza verticalmente */
+    position: relative;          /* Para posicionamento de elementos filhos */
+}
+
+/* Conteúdo da seção Hero */
+.hero-content{
+    position: relative;  /* Para z-index funcionar */
+    z-index: 1;         /* Garante que fique acima de possíveis elementos de fundo */
+}
+/* Título principal da seção Hero */
+.hero-title{
+    top: -20px;             /* Ajuste fino de posicionamento */
+    font-size: 4.5rem;      /* Tamanho grande de fonte */
+    line-height: 1.1;       /* Espaçamento entre linhas */
+    margin-bottom: 2rem;    /* Margem inferior */
+    background: linear-gradient(45deg, var(--dark), var(--primary)); /* Gradiente de cores */
+    -webkit-background-clip: text; /* Aplica o gradiente apenas ao texto */
+    -webkit-text-fill-color: transparent; /* Torna o texto transparente para mostrar o gradiente */
+}
+
+/* Texto descritivo da seção Hero */
+.hero-text{
+    font-size: 1.2rem;      /* Tamanho de fonte legível */
+    color: #666;            /* Cor cinza para melhor contraste */
+    margin-bottom: 3rem;    /* Margem inferior maior */
+    max-width: 500px;       /* Limita a largura para melhor legibilidade */
+}
+
+/* Container da imagem do Hero */
+.hero-image{
+    position: relative;     /* Permite posicionamento absoluto de elementos filhos */
+    overflow: hidden;       /* Esconde qualquer conteúdo que ultrapasse */
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); /* Transição personalizada */
+}
+
+/* Estilo da imagem dentro do container */
+.hero-image img{
+    width: 100%;           /* Ocupa 100% do container */
+    object-fit: cover;     /* Garante que a imagem cubra todo o espaço */
+}
+
+/* Estilo base do botão com gradiente */
+.btn{
+    display: inline-flex;   /* Layout flexível inline */
+    align-items: center;    /* Centraliza verticalmente */
+    padding: 1rem 2.5rem;  /* Espaçamento interno generoso */
+    background: linear-gradient(45deg, var(--primary), var(--secondary)); /* Gradiente */
+    color: var(--light);    /* Cor clara do texto */
+    border-radius: 50px;    /* Bordas completamente arredondadas */
+    text-decoration: none;  /* Remove sublinhado */
+    font-weight: 600;       /* Peso da fonte */
+    gap: 0.8rem;           /* Espaço entre ícone e texto */
+    transition: all 0.3s ease; /* Transição suave */
+    position: relative;     /* Para pseudo-elementos */
+    overflow: hidden;       /* Esconde transbordamento */
+}
+
+/* Efeito hover do botão (faixa brilhante) */
+.btn::before{
+    content: '';           /* Necessário para pseudo-elementos */
+    position: absolute;     /* Posicionamento absoluto */
+    width: 100%;           /* Largura total */
+    height: 100%;          /* Altura total */
+    background: rgba(255, 255, 255, 0.1); /* Cor branca semi-transparente */
+    left: -100%;           /* Começa fora do botão */
+    transition: all 0.3s ease; /* Animação suave */
+}
+
+/* Animação ao passar o mouse */
+.btn:hover::before{
+    left: 100%;            /* Move a faixa brilhante para a direita */
+}
+
+/* Seção de Serviços */
+.services{
+    padding: 8rem 0;       /* Espaçamento vertical generoso */
+    background: linear-gradient(45deg, #f8f9fa, #ffffff); /* Gradiente sutil */
+}
+
+/* Grid responsivo de serviços */
+.services-grid{
+    display: grid; /* Layout em grid */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Colunas responsivas */
+    gap: 3rem;    /* Espaço entre cards */
+    margin-top: 4rem; /* Margem superior */
+}
+
+/* Cards individuais de serviço */
+.service-card{
+    padding: 2.5rem;       /* Espaçamento interno */
+    border-radius: 20px;    /* Bordas arredondadas */
+    background: var(--light); /* Cor de fundo */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Sombra pronunciada */
+    transition: all 0.3s ease; /* Transição suave */
+    position: relative;     /* Para efeitos */
+    overflow: hidden;       /* Esconde transbordamentos */
+    text-align: center;     /* Alinhamento central */
+}
+
+/* Efeito hover do card */
+.service-card:hover{
+    transform: translateY(-10px); /* Levanta o card */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1); /* Sombra mais suave */
+}
+
+/* Ícone circular dos serviços */
+.service-icon{
+    width: 80px;           /* Tamanho fixo */
+    height: 80px;          /* Tamanho fixo */
+    background: linear-gradient(45deg, var(--primary), var(--secondary)); /* Gradiente */
+    border-radius: 50%;     /* Forma circular */
+    margin: 0 auto 1.5rem; /* Centraliza e adiciona margem */
+    display: flex;         /* Layout flexível */
+    align-items: center;   /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    font-size: 1.8rem;     /* Tamanho do ícone */
+    color: var(--light);   /* Cor do ícone */
+}
+
+/* Seção de Depoimentos */
+.testimonials{
+    padding: 8rem 0;       /* Espaçamento vertical */
+    background: var(--secondary); /* Cor de fundo */
+    color: var(--light);   /* Cor do texto */
+    position: relative;    /* Para elementos filhos */
+    overflow: hidden;      /* Esconde transbordamentos */
+}
+
+/* Grid responsivo de depoimentos */
+.testimonial-grid{
+    display: grid; /* Layout em grid */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Colunas responsivas */
+    gap: 3rem;    /* Espaço entre cards */
+    margin-top: 4rem; /* Margem superior */
+}
+
+/* Cards individuais de depoimento */
+.testimonial-card{
+    background: rgba(255, 255, 255, 0.1); /* Fundo semi-transparente */
+    padding: 2rem;        /* Espaçamento interno */
+    border-radius: 20px;   /* Bordas arredondadas */
+    backdrop-filter: blur(10px); /* Efeito de desfoque */
+    position: relative;    /* Para elementos filhos */
+}
+
+/* Foto do cliente */
+.client-photo{
+    width: 80px;          /* Tamanho fixo */
+    height: 80px;         /* Tamanho fixo */
+    border-radius: 50%;    /* Forma circular */
+    margin-bottom: 1.5rem; /* Margem inferior */
+    border: 3px solid var(--light); /* Borda branca */
+}
+
+/* Estrelas de avaliação */
+.rating{
+    color: var(--accent); /* Cor destacada */
+    margin-bottom: 1rem;  /* Margem inferior */
+}
+
+/* Media Queries para responsividade */
+
+/* Para telas até 1200px */
+@media(max-width: 1200px){
+    .hero-title{
+        font-size: 3.5rem; /* Reduz tamanho do título */
+    }
+}
+
+/* Para telas até 992px (tablets) */
+@media(max-width: 992px){
+    .hero{
+        grid-template-columns: 1fr; /* Muda para layout de coluna única */
+        padding: 150px 0 60px; /* Ajuste de padding */
+        text-align: center;    /* Centraliza texto */
+    }
+
+    .hero-image{
+        max-width: 600px;     /* Limita largura */
+        margin: 0 auto;       /* Centraliza */
+    }
+}
+
+/* Para telas até 768px (celulares) */
+@media (max-width: 768px){
+    .container{
+        padding: 0 20px;      /* Reduz padding lateral */
+    }
+
+    .nav-links{
+        display: none;        /* Esconde links de navegação */
+    }
+
+    .hero-title{
+        font-size: 2.8rem;    /* Reduz ainda mais o título */
+    }
+} 
+
+/* Classes para animação de scroll */
+.scroll-reveal{
+    opacity: 0;               /* Começa invisível */
+    transform: translateY(30px); /* Começa deslocado para baixo */
+    transition: all 0.8s ease; /* Transição suave */
+} 
+
+/* Classe ativa quando elemento está visível */
+.scroll-reveal.active{
+    opacity: 1;              /* Torna visível */
+    transform: translateY(0); /* Volta à posição normal */
+}
+
+/* Seção de Reservas */
+.booking{
+    padding: 8rem 0;        /* Espaçamento vertical */
+    background: linear-gradient(45deg, var(--primary), var(--secondary)); /* Gradiente */
+    color: var(--light);    /* Cor do texto */
+    position: relative;     /* Para elementos filhos */
+    overflow: hidden;       /* Esconde transbordamentos */
+}
+
+/* Efeito decorativo de bolha desfocada para a seção de reservas */
+.booking::before {
+    content: '';                     /* Necessário para pseudo-elementos */
+    position: absolute;              /* Posicionamento absoluto */
+    width: 500px;                   /* Largura grande */
+    height: 500px;                  /* Altura igual à largura (forma circular) */
+    background: rgba(255, 255, 255, 0.1); /* Cor branca com transparência */
+    border-radius: 50%;              /* Forma circular */
+    filter: blur(80px);              /* Efeito de desfoque pronunciado */
+    top: -50%;                      /* Posicionamento acima do container */
+    right: -50%;                    /* Posicionamento à direita do container */
+}
+
+/* Subtítulo da seção */
+.section-subtitle {
+    text-align: center;              /* Centraliza o texto */
+    margin-bottom: 3rem;             /* Espaçamento inferior generoso */
+    opacity: 0.9;                    /* Transparência sutil para estilo moderno */
+}
+
+/* Container do formulário de reservas */
+.booking-form {
+    max-width: 800px;                /* Largura máxima para melhor legibilidade */
+    margin: 0 auto;                  /* Centraliza horizontalmente */
+}
+
+/* Grid responsivo para os campos do formulário */
+.form-grid {
+    display: grid;                   /* Layout em grid */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Colunas que se ajustam */
+    gap: 2rem;                       /* Espaço entre campos */
+    margin-bottom: 2rem;             /* Margem inferior */
+}
+
+/* Grupo de campos de entrada (input) */
+.input-group {
+    position: relative;              /* Permite posicionamento absoluto dos filhos */
+}
+
+/* Estilização comum para todos os campos de entrada */
+.input-group input,
+.input-group select,
+.input-group textarea {
+    width: 100%;                     /* Ocupa toda a largura disponível */
+    padding: 1.5rem 1rem 1rem 3rem; /* Espaçamento interno (incluindo espaço para ícone) */
+    border: 2px solid rgba(255, 255, 255, 0.2); /* Borda sutil */
+    border-radius: 10px;             /* Cantos arredondados */
+    background: rgba(255, 255, 255, 0.1); /* Fundo semi-transparente */
+    color: var(--light);             /* Cor do texto */
+    font-size: 1rem;                 /* Tamanho padrão de fonte */
+    transition: all 0.3s ease;       /* Transição suave para interações */
+}
+
+/* Estilo específico para textarea */
+.input-group textarea {
+    padding: 1.5rem 1rem 1rem 3rem; /* Mesmo padding que outros campos */
+    resize: vertical;                /* Permite redimensionamento apenas vertical */
+}
+
+/* Rótulos (labels) flutuantes */
+.input-group label {
+    position: absolute;              /* Posicionamento absoluto dentro do grupo */
+    left: 3rem;                      /* Alinhamento com o ícone */
+    top: 50%;                        /* Centralização vertical */
+    transform: translateY(-50%);     /* Ajuste fino de centralização */
+    color: rgba(255, 255, 255, 0.7); /* Cor semi-transparente */
+    pointer-events: none;            /* Permite clicar através do label */
+    transition: all 0.3s ease;       /* Animação suave */
+}
+
+/* Ícones dos campos */
+.input-group i {
+    position: absolute;              /* Posicionamento absoluto */
+    left: 1rem;                     /* Alinhamento à esquerda */
+    top: 50%;                       /* Centralização vertical */
+    transform: translateY(-50%);     /* Ajuste fino */
+    color: rgba(255, 255, 255, 0.7); /* Cor combinando com o design */
+}
+
+/* Estilo para campos em foco */
+.input-group input:focus,
+.input-group select:focus,
+.input-group textarea:focus {
+    border-color: var(--light);      /* Borda mais visível */
+    background: rgba(255, 255, 255, 0.15); /* Fundo mais claro */
+    outline: none;                   /* Remove contorno padrão do navegador */
+}
+
+/* Animação dos labels quando o campo tem foco ou conteúdo válido */
+.input-group input:valid ~ label,
+.input-group input:focus ~ label,
+.input-group select:valid ~ label,
+.input-group select:focus ~ label {
+    transform: translateY(-180%);    /* Move para cima do campo */
+    font-size: 0.8rem;              /* Reduz tamanho */
+    opacity: 0.7;                    /* Transparência sutil */
+}
+
+/* Placeholder personalizado para textarea */
+.input-group textarea::placeholder {
+    color: rgba(255, 255, 255, 0.5); /* Cor semi-transparente */
+}
+
+/* Classe para campos que ocupam largura total */
+.full-width {
+    grid-column: 1 / -1;            /* Ocupa todas as colunas do grid */
+}
+
+/* Media query para telas menores (mobile) */
+@media (max-width: 768px) {
+    /* Ajuste de padding para mobile */
+    .input-group input,
+    .input-group select {
+        padding-left: 2.5rem;       /* Reduz espaço para ícone */
+    }
+    
+    /* Reposicionamento de ícones em mobile */
+    .input-group i {
+        left: 0.8rem;               /* Ajuste fino de posição */
+    }
+}
+/*Footer*/
+
+
+
+/* Container principal do footer com layout grid */
+.footer-content {
+    display: grid; /* Ativa o layout grid */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Colunas responsivas que se ajustam */
+    gap: 3rem; /* Espaçamento entre colunas */
+    margin-bottom: 4rem; /* Margem inferior */
+}
+
+/* Estilo para cada coluna do footer */
+.footer-col {
+    padding: 0 1.5rem; /* Espaçamento interno horizontal */
+}
+
+/* Estilo dos títulos das colunas */
+.footer-col h3 {
+    color: var(--primary); /* Cor primária da marca */
+    font-size: 1.5rem; /* Tamanho de fonte */
+    margin-bottom: 2rem; /* Espaçamento inferior */
+    position: relative; /* Permite posicionar o pseudo-elemento */
+}
+
+/* Linha decorativa abaixo dos títulos */
+.footer-col h3::after {
+    content: ''; /* Necessário para pseudo-elementos */
+    position: absolute; /* Posicionamento absoluto */
+    bottom: -10px; /* Posiciona abaixo do título */
+    left: 0; /* Alinha à esquerda */
+    width: 50px; /* Largura da linha */
+    height: 2px; /* Altura da linha */
+    background: var(--primary); /* Cor da linha */
+}
+
+/* Estilo do texto parágrafo */
+.footer-col p {
+    color: rgba(255, 255, 255, 0.8); /* Cor do texto com transparência */
+    margin-bottom: 1rem; /* Espaçamento entre parágrafos */
+    line-height: 1.6; /* Altura da linha para melhor legibilidade */
+}
+
+/* Lista de links do footer */
+.footer-links {
+    list-style: none; /* Remove marcadores padrão */
+}
+
+/* Itens da lista de links */
+.footer-links li {
+    margin-bottom: 0.8rem; /* Espaçamento entre itens */
+}
+
+/* Estilo dos links */
+.footer-links a {
+    color: rgba(255, 255, 255, 0.8); /* Cor com transparência */
+    text-decoration: none; /* Remove sublinhado */
+    transition: all 0.3s ease; /* Transição suave */
+    position: relative; /* Para posicionar o pseudo-elemento */
+}
+
+/* Efeito hover nos links */
+.footer-links a:hover {
+    color: var(--primary); /* Muda para cor primária */
+    padding-left: 10px; /* Desloca o texto para direita */
+}
+
+/* Seta decorativa (inicialmente escondida) */
+.footer-links a::before {
+    content: '>'; /* Símbolo de seta */
+    position: absolute; /* Posicionamento absoluto */
+    left: -15px; /* Posição inicial (fora do elemento) */
+    opacity: 0; /* Inicialmente invisível */
+    transition: all 0.3s ease; /* Animação suave */
+}
+
+/* Mostra a seta no hover */
+.footer-links a:hover::before {
+    opacity: 1; /* Torna visível */
+    left: -10px; /* Posição final */
+}
+
+/* Container dos links sociais */
+.social-links {
+    display: flex; /* Layout flexível */
+    gap: 1rem; /* Espaço entre itens */
+    margin-top: 1.5rem; /* Margem superior */
+}
+
+/* Estilo dos ícones sociais */
+.social-links a {
+    width: 40px; /* Tamanho fixo */
+    height: 40px; /* Tamanho fixo */
+    background: rgba(0, 0, 0, 0.1); /* Fundo semi-transparente */
+    border-radius: 50%; /* Forma circular */
+    display: flex; /* Flex para centralização */
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    color: var(--light); /* Cor do ícone */
+    text-decoration: none; /* Remove sublinhado */
+    transition: all 0.3s ease; /* Animação suave */
+}
+
+/* Efeito hover nos ícones sociais */
+.social-links a:hover {
+    background: var(--primary); /* Muda cor de fundo */
+    transform: translateY(-3px); /* Efeito de levantar */
+}
+
+/* Área de copyright */
+.copiryght {
+    text-align: center; /* Centraliza o texto */
+    padding-top: 3rem; /* Espaçamento superior */
+    margin-top: 3rem; /* Margem superior */
+    border-top: 1px solid rgba(0, 0, 0, 0.1); /* Linha divisória */
+    color: rgba(255, 255, 255, 0.6); /* Cor do texto */
+    font-size: 0.9rem; /* Tamanho menor de fonte */
+}
+
+/* Media queries para responsividade */
+@media (max-width: 768px) {
+    /* Ajustes para mobile */
+    .footer-content {
+        grid-template-columns: 1fr; /* Muda para 1 coluna */
+        text-align: center; /* Centraliza o conteúdo */
+    }
+
+    /* Centraliza a linha decorativa dos títulos */
+    .footer-col h3::after {
+        left: 50%; /* Posiciona no meio */
+        transform: translateX(-50%); /* Ajuste fino de centralização */
+    }
+
+    /* Centraliza os ícones sociais */
+    .social-links {
+        justify-content: center;
+    }
+}
