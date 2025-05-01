@@ -115,11 +115,12 @@
   transform: translateX(-50%);
 }
 
-.atc{
+.topicos{
   padding: 30px;
 }
 
 .cnt-atc{
+  margin-left: 15px;
   line-height: 18px;
   border-radius: 8px;
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.295);
@@ -134,10 +135,35 @@
   width: 300px;
 }
 
-.cnt-atc img{
+.img-lanche{
   border-radius: 14px;
   margin-right: auto;
   order: 1;
   width: 120px;
   height: 120px;
 }
+
+.nome-lanche{
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.descriçao{
+  font-size: 14px;
+}
+
+.lanches{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+.preço{
+  
+  color: rgb(4, 185, 4);
+  font-size: 15px;
+  font-weight: bold;
+  position: relative;
+  top: 18px;
+}
+
