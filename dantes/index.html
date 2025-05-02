@@ -9,13 +9,67 @@
 </head>
 <body>
     <header>
-        <img src="logo.png" alt="logo" class="img-logo">
+        <i class="fa-solid fa-bars menu-icon"></i> 
+        <i class="fa-solid fa-cart-shopping cart-icon"></i>
     </header>
+
+    <nav class="menu-lateral">
+        <ul class="menu-lista">
+            <li>
+                <a href="#">
+                    <i class="fa-solid fa-cart-shopping menu-ico"></i>
+                    FAZER PEDIDO
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa-solid fa-list-ul menu-ico"></i>
+                    MEUS PEDIDOS
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa-regular fa-money-bill-1 menu-ico"></i>
+                    CARTÃO FIDELIDADE
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa-solid fa-user-plus menu-ico"></i>
+                    MEU CADASTRO
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa-brands fa-whatsapp menu-ico"></i>
+                    CHAMAR NO WHATS
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa-solid fa-location-dot menu-ico"></i>
+                    ENDEREÇO NO MAPA
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa-solid fa-right-from-bracket menu-ico"></i>
+                    SAIR
+                </a>
+            </li>
+        </ul>
+    </nav>
+    
+    
+    <section>
+         <img src="logo.png" alt="logo" class="img-logo">
+    </section>
+    
     <section>
         <p class="informaçoes"><i class="fa-regular fa-clock" class="emoji"></i>  Loja fechada temporariamente a pedido da emrpesa</p>
         <p class="informaçoes"><i class="fa-solid fa-location-dot" class="emoji"></i>  Avenida Ministro João Alberto, 217 - Centro - Barra do Garças-MT - 78600-000</p>
     </section>
-    <div class="navegaçao">
+    <!-- <div class="navegaçao">
         <div class="atenção">
             <p>⚠️ ATENÇÃO!!!</p>
         </div>
@@ -55,6 +109,50 @@
         <div class="bebidas">
             <p>Bebidas</p>
         </div>
+    </div> -->
+
+    <div class="navegaçao">
+        <!-- Botão de atenção -->
+        <button class="botao-nav atencao" type="button">
+            ⚠️ ATENÇÃO!!!
+        </button>
+    
+        <!-- Botões de categorias -->
+        <button class="botao-nav" type="button">
+            <a href="#combos">Combos</a>
+        </button>
+    
+        <button class="botao-nav" type="button">
+            Panelinhas do Dantes
+        </button>
+    
+        <button class="botao-nav" type="button">
+            Pizza Família (12 fatias)
+        </button>
+    
+        <button class="botao-nav" type="button">
+            Pizza Grande (8 fatias)
+        </button>
+    
+        <button class="botao-nav" type="button">
+            Pizza Média (6 fatias)
+        </button>
+    
+        <button class="botao-nav" type="button">
+            Esfirra Doce
+        </button>
+    
+        <button class="botao-nav" type="button">
+            Esfirras Salgadas
+        </button>
+    
+        <button class="botao-nav" type="button">
+            Pratos á la Carte
+        </button>
+    
+        <button class="botao-nav" type="button">
+            Bebidas
+        </button>
     </div>
 
 
@@ -80,7 +178,7 @@
         <img src="atençao.png" alt="atençao" class="img-lanche">
     </section>
 
-    <div class="topicos" style="margin-left: 10px;">
+    <div class="topicos" id="combos" style="margin-left: 10px;">
         <h2>COMBOS</h2>
     </div>
 
